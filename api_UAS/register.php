@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Register User
+ * Fungsi: Membuat akun user baru dengan email dan password
+ * Method: POST
+ */
 include 'config.php';
 
 $data = json_decode(file_get_contents('php://input'), true);

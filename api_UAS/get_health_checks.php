@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Ambil Daftar Health Check
+ * Fungsi: Mengambil semua data pemeriksaan kesehatan user
+ * Method: GET
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, OPTIONS');

@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Edit/Update Obat
+ * Fungsi: Mengubah data obat yang sudah ada di database
+ * Method: POST
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');

@@ -685,35 +685,56 @@ class ApiService {
     try {
       final userId = await _getUserId();
       if (userId == null) {
-        print('User not logged in');
+        print('❌ User not logged in');
         return null;
       }
 
-      final response = await http.post(
+      final requestBody = {
+        'user_id': userId,
+        'nama_tes': healthCheck.namaTes,
+        'catatan': healthCheck.catatan,
+        'tanggal': healthCheck.tanggal,
+        'waktu_pemeriksaan': healthCheck.waktuPemeriksaan,
+        'status': healthCheck.status,
+      };
+
+      print('📤 Adding health check with body: $requestBody');
+
+      final response = await http
+          .post(
         Uri.parse('$baseUrl/add_health_check.php'),
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({
-          'user_id': userId,
-          'nama_tes': healthCheck.namaTes,
-          'catatan': healthCheck.catatan,
-          'tanggal': healthCheck.tanggal,
-          'waktu_pemeriksaan': healthCheck.waktuPemeriksaan,
-          'status': healthCheck.status,
-        }),
+        body: jsonEncode(requestBody),
+      )
+          .timeout(
+        const Duration(seconds: 10),
+        onTimeout: () {
+          throw TimeoutException('Request timeout after 10 seconds');
+        },
       );
 
-      print('Response status: ${response.statusCode}');
-      print('Response body: ${response.body}');
+      print('📥 Response status: ${response.statusCode}');
+      print('📥 Response body: ${response.body}');
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         final data = jsonDecode(response.body);
-        if (data['success']) {
+        if (data['success'] == true) {
+          print(
+              '✅ Health check added successfully: ${data['health_check_id']}');
           return data['health_check_id'];
+        } else {
+          print('❌ API returned success=false: ${data['error']}');
+          return null;
         }
+      } else {
+        print('❌ API returned status code: ${response.statusCode}');
+        return null;
       }
+    } on TimeoutException catch (e) {
+      print('⏱️ Timeout error: $e');
       return null;
     } catch (e) {
-      print('Error adding health check: $e');
+      print('❌ Error adding health check: $e');
       return null;
     }
   }

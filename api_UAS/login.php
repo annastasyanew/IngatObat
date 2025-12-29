@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Login User
+ * Fungsi: Verifikasi email dan password user, return user data jika valid
+ * Method: POST
+ */
 include 'config.php';
 
 $data = json_decode(file_get_contents('php://input'), true);

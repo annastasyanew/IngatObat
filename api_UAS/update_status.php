@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Update Status Jadwal Obat
+ * Fungsi: Menandai jadwal obat sebagai sudah diminum
+ * Method: POST
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');

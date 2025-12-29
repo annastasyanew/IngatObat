@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Upload Foto Profil
+ * Fungsi: Menerima dan menyimpan foto profil user
+ * Method: POST
+ */
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');

@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Ambil Daftar Jadwal Obat
+ * Fungsi: Mengambil jadwal minum obat untuk tanggal tertentu
+ * Method: GET
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');

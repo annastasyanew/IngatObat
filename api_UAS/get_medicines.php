@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Ambil Daftar Obat
+ * Fungsi: Mengambil semua data obat dari database untuk user tertentu
+ * Method: GET
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, OPTIONS');

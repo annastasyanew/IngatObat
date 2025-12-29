@@ -1,4 +1,9 @@
 <?php
+/**
+ * File Konfigurasi Database dan Header CORS
+ * Fungsi: Menghubungkan aplikasi ke database MySQL dan setup CORS headers
+ * Digunakan oleh: Semua API endpoint
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');

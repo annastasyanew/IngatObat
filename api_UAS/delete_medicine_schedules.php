@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Hapus Semua Jadwal Obat
+ * Fungsi: Menghapus semua jadwal untuk obat tertentu
+ * Method: POST
+ */
 require_once 'config.php';
 
 header('Content-Type: application/json');

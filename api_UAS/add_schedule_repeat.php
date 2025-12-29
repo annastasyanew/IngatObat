@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Tambah Jadwal Obat dengan Perulangan
+ * Fungsi: Menyimpan jadwal obat dengan tipe repeat (harian, mingguan, custom)
+ * Method: POST
+ */
 require_once 'config.php';
 
 header('Content-Type: application/json');

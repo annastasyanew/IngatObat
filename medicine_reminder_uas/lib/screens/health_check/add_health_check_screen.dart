@@ -102,16 +102,21 @@ class _AddHealthCheckScreenState extends State<AddHealthCheckScreen> {
     });
 
     if (result != null) {
-      Navigator.pop(context, true);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Pemeriksaan kesehatan berhasil ditambahkan')),
-      );
+      if (mounted) {
+        Navigator.pop(context, true);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('Pemeriksaan kesehatan berhasil ditambahkan')),
+        );
+      }
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Gagal menambahkan pemeriksaan kesehatan')),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text(
+                  'Gagal menambahkan pemeriksaan kesehatan. Periksa koneksi internet atau API server.')),
+        );
+      }
     }
   }
 
@@ -120,7 +125,7 @@ class _AddHealthCheckScreenState extends State<AddHealthCheckScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tambah Pemeriksaan Kesehatan'),
-        backgroundColor: Colors.purple,
+        backgroundColor: const Color(0xFF5DA9E9),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -220,7 +225,7 @@ class _AddHealthCheckScreenState extends State<AddHealthCheckScreen> {
             ElevatedButton(
               onPressed: _isLoading ? null : _addHealthCheck,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple,
+                backgroundColor: const Color(0xFF5DA9E9),
                 padding: const EdgeInsets.symmetric(vertical: 12),
               ),
               child: _isLoading

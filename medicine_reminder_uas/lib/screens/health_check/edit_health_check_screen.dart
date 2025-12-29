@@ -132,7 +132,7 @@ class _EditHealthCheckScreenState extends State<EditHealthCheckScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Pemeriksaan Kesehatan'),
-        backgroundColor: Colors.purple,
+        backgroundColor: const Color(0xFF5DA9E9),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -230,7 +230,7 @@ class _EditHealthCheckScreenState extends State<EditHealthCheckScreen> {
             ElevatedButton(
               onPressed: _isLoading ? null : _updateHealthCheck,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple,
+                backgroundColor: const Color(0xFF5DA9E9),
                 padding: const EdgeInsets.symmetric(vertical: 12),
               ),
               child: _isLoading

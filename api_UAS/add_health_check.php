@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Tambah Health Check (Pemeriksaan Kesehatan)
+ * Fungsi: Menerima dan menyimpan data pemeriksaan kesehatan user ke database
+ * Method: POST
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');

@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Edit/Update Jadwal Obat
+ * Fungsi: Mengubah data jadwal minum obat yang sudah ada
+ * Method: POST
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');

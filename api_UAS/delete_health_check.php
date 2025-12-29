@@ -1,4 +1,9 @@
 <?php
+/**
+ * API Endpoint untuk Hapus Health Check
+ * Fungsi: Menghapus data pemeriksaan kesehatan dari database
+ * Method: POST
+ */
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
